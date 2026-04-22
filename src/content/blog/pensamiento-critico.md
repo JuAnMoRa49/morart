@@ -1,11 +1,24 @@
 ---
-title: "Pensamiento Critico"
+title: "Pensamiento Crítico"
 author: "Juan Montoya"
 inspo: "Matheus Ruzzarin"
 description: "La importancia de pensar por uno mismo"
-pubDate: "Jul 08 2022"
-updDate: "Jul 08 2022"
+tags: ["pensamiento crítico", "filosofía", "reflexión"]
+pubDate: "Apr 22 2026"
 heroImage: "../../assets/blog/pensamiento-critico.webp"
 ---
 
-En la era por la que transcurrimos es importante pensar que es lo que pasa, como es que pasa, por que es que pasa y cuando es que pasa, y ahora, si es que pasa
+En un principio, cuando queriamos considerar que "conociamos" algo, era mediante las historias narradas por otros, o por la experiencia de alguien mas en una situacion similar, pero era bastante limitado, ya que se cerraba, dependiendo del tamaño del circlo en el que te desarrollabas, era la medida de la cual podias "conocer" nuevas cosas.
+<br>
+<br/>
+Con el transcurso del tiempo, y ahora se podia consultar diversas fuentes de informacion, de diferentes autores y con diferentes propuestas al rededor de un mismo tema, con los libros.
+Pero era bastante complejo, ya que quiza una parte de un libro era cierta, pero otra no, entonces debias de realizar varias consultas para poder acercarte a la "verdad".
+<br>
+<br/>
+Posteriormente con el internet, y la posibilidad de realizar una consulta universal, en la inmensidad de la informacion disponible en internet, lograba que la mayoria podria estar "informado", pero informado no significa que tengamos la verdad de las cosas, solo diversas opiniones con un poco mas de respaldo, pero de la misma forma, quiza no tan verdadero
+<br>
+</br>
+Con el surgimiento de los celulares, entonces, ya no era una consulta desde la casa o un lugar con computadoras, sino, con un gesto de sacar el celular y unos cuantos clicks, podiamos obtener la informaion que debeabamos, pero no significa que sea la correcta, y ahi es donde recae el problema.
+<br>
+</br>
+Posterior a ello, con la intencion de "simplificar" procesos, tareas y agilizar el tiempo, el surgimiento de la IA, de una forma brusca se fue infiltrando en diferentes sectores, y hemos dado acceso a ello, pero toda balanza tiene su contrapeso, como hemos buscado simplificar el proceso de obtencion de informacion, la informacion verdadera ha perdido valor, o credibilidad, de la forma en la que hemos perdido la capacidad de pensar propiamente y proponer nuevas ideas.

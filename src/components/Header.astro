@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from "../consts";
 import NavLink from "./NavLink.astro";
+import { NAV_LINKS } from "../consts";
 ---
 
 <header class="fixed left-0 right-0 top-0 z-50 bg-black text-white">
@@ -10,9 +11,13 @@ import NavLink from "./NavLink.astro";
     </h2>
 
     <div class="flex gap-4">
-      <NavLink href="/">Home</NavLink>
-      <NavLink href="/blog">Blog</NavLink>
-      <NavLink href="/portfolio">Portfolio</NavLink>
+      {
+        NAV_LINKS.map((link) => (
+          <NavLink key={link.key} href={link.href}>
+            {link.name}
+          </NavLink>
+        ))
+      }
     </div>
   </nav>
 </header>

@@ -1,10 +1,19 @@
+---
+import { NAV_LINKS } from "../consts";
+---
+
 <footer class="bg-black text-white">
   <div class="general-padding flex flex-col justify-between md:flex-row">
     <div>Morart</div>
     <nav>
       <ul class="flex space-x-4">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/blog">Blog</a></li>
+        {
+          NAV_LINKS.map((link) => (
+            <li key={link.key}>
+              <a href={link.href}>{link.name}</a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
     <form>

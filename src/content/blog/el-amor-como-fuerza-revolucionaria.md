@@ -1,0 +1,17 @@
+---
+title: "El amor como fuerza revolucionaria"
+author: "Juan Montoya"
+inspo: "Diego Ruzzarin"
+description: "El amor como una expresion de uno mismo"
+tags: ["amor", "filosofía", "reflexión"]
+pubDate: "Apr 22 2026"
+heroImage: "../../assets/blog/el-amor-como-fuerza-revolucionaria.webp"
+---
+
+Considerando que la decision de amar a alguien, no es tan voluntaria, podria decirse que somos prisioneros de nuestros deseos y nuestros conocimientos.
+<br>
+<br/>
+El amor es una de las caracteristicas esenciales que nos muestran la diferencia entre nosotros y el resto de animales, pues somos capaces de dejar a un lado el yo por el nosotros, o incluso por el otro,
+<br>
+<br/>
+De esa forma podemos afirmar que el amor es el que permite quitar las barreras individualistas al momento que dejamos el yo.

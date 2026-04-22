@@ -5,3 +5,8 @@ export const SITE_TITLE = "Estudio Morart";
 export const SITE_DESCRIPTION =
   "Bienvenido a un espacio decdicado a creatividad";
 export const SITE_KEYWORDS = "estudio, morart, arte, diseño, creatividad";
+
+export const NAV_LINKS = [
+  { name: "Inicio", href: "/", key: "home" },
+  { name: "Blog", href: "/blog", key: "blog" },
+];

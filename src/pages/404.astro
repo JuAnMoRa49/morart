@@ -1,0 +1,51 @@
+---
+import GeneralLayout from "../layouts/GeneralLayout.astro";
+---
+
+<GeneralLayout title="404 - Página no encontrada">
+  <div
+    class="general-padding h-dvh flex flex-col items-center justify-center text-center"
+  >
+    <div
+      class="border-2 border-black p-12 bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative"
+    >
+      <h1 class="text-8xl font-black mb-4 tracking-tighter">404</h1>
+
+      <div class="w-16 h-1 bg-black mx-auto mb-6"></div>
+
+      <p
+        class="text-xl font-medium uppercase tracking-widest mb-8 text-gray-600"
+      >
+        Página no encontrada
+      </p>
+
+      <p class="max-w-xs mx-auto mb-10 text-gray-500 leading-relaxed">
+        Parece que te has perdido en el vacío. El contenido que buscas ha sido
+        movido o ya no existe.
+      </p>
+
+      <a
+        href="/"
+        class="group inline-flex items-center gap-2 px-8 py-4 bg-black text-white font-bold uppercase tracking-tighter transition-all hover:bg-gray-900 active:translate-x-1 active:translate-y-1 active:shadow-none shadow-[4px_4px_0px_0px_rgba(100,100,100,1)]"
+      >
+        Volver al inicio
+        <svg
+          class="w-4 h-4 transition-transform group-hover:translate-x-1"
+          viewBox="0 0 12 12"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 6h10M7 2l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="square"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div class="absolute -z-10 opacity-[0.03] pointer-events-none select-none">
+      <span class="text-[20rem] font-black">NULL</span>
+    </div>
+  </div>
+</GeneralLayout>
