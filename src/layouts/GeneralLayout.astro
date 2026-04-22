@@ -1,0 +1,26 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BaseHead from "../components/BaseHead.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { ClientRouter } from "astro:transitions";
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={title || SITE_TITLE}
+      description={description || SITE_DESCRIPTION}
+    />
+    <ClientRouter />
+  </head>
+  <body>
+    <Header />
+    <main class="pt-12 pb-4">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
