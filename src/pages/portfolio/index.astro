@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import GeneralLayout from "../../layouts/GeneralLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = (await getCollection("portfolio")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<GeneralLayout>
+  <div class="general-padding pt-2">
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md-gap-8">
+      {
+        projects.map((project) => (
+          <li>
+            <ProjectCard project={project} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</GeneralLayout>

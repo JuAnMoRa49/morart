@@ -4,6 +4,8 @@
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(0, 0, 0, 1);
 
+  --color-primary: rgba(255, 0, 0, 1);
+
   --color-red: rgba(255, 0, 0, 1);
   --color-yellow: rgba(255, 255, 0, 1);
   --color-blue: rgba(0, 0, 255, 1);

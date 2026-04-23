@@ -1,7 +1,8 @@
 ---
 title: "Escuela de Danza Nijinsky"
 description: "La importancia de pensar por uno mismo"
-tags:
+live: true
+technologies:
   [
     "sitio web",
     "sistema de información",
@@ -14,7 +15,7 @@ demo: "https://www.nijinskyqro.com"
 repo: "https://github.com/JuAnMoRa49/nijinsky-page"
 status: "in-progress"
 pubDate: "January 20 2026"
-updateDate: "April 20 2026"
+updDate: "April 20 2026"
 heroImage: "../../assets/portfolio/nijinsky-escuela.webp"
 ---
 

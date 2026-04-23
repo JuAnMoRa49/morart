@@ -4,6 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import GeneralLayout from "./GeneralLayout.astro";
 import defaultHero from "../assets/blog/default-hero.webp";
+import { ArrowLeft } from "@lucide/astro";
 
 type Props = CollectionEntry<"blog">["data"] & { slug: string };
 
@@ -64,5 +65,19 @@ const imageToDisplay = heroImage || defaultHero;
         <p><FormattedDate date={pubDate} /></p>
       </div>
     </div>
+    <footer
+      class="mt-20 pt-8 border-t border-gray-800 flex justify-between items-center"
+    >
+      <a
+        href="/portfolio"
+        class="text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-2 group"
+      >
+        <ArrowLeft
+          size={16}
+          class="group-hover:-translate-x-1 transition-transform"
+        />
+        Volver al portfolio
+      </a>
+    </footer>
   </article>
 </GeneralLayout>

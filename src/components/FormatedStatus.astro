@@ -1,0 +1,25 @@
+---
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props;
+
+const statusClasses = {
+  completed: "text-green-500",
+  "in-progress": "text-blue-400",
+  archived: "text-gray-500",
+};
+
+const statusLabels = {
+  completed: "Completado",
+  "in-progress": "En progreso",
+  archived: "Archivado",
+};
+---
+
+<p
+  class={`text-xs tracking-widest uppercase mb-2 ${statusClasses[status] || "text-gray-500"}`}
+>
+  {statusLabels[status] || "Desconocido"}
+</p>

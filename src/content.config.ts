@@ -27,7 +27,8 @@ const portfolio = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
-      tags: z.array(z.string()),
+      live: z.boolean().default(false),
+      technologies: z.array(z.string()),
       demo: z.string().optional(),
       repo: z.string().optional(),
       status: z.enum(["in-progress", "completed", "archived"]),

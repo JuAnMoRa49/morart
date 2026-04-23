@@ -1,90 +1,156 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Header from "../components/Header.astro";
+import GeneralLayout from "./GeneralLayout.astro";
+import defaultHero from "../assets/portfolio/default-hero.webp";
+import { ArrowLeft, ArrowRight, ExternalLink, Home } from "@lucide/astro";
+import FormatedStatus from "../components/FormatedStatus.astro";
 
-type Props = CollectionEntry<"portfolio">["data"];
+type Props = CollectionEntry<"portfolio">["data"] & { slug: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+  title,
+  description,
+  live,
+  technologies,
+  demo,
+  repo,
+  status,
+  pubDate,
+  updDate,
+  heroImage,
+  slug,
+} = Astro.props;
+
+const imageToDisplay = heroImage || defaultHero;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-    <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-      .hero-image {
-        width: 100%;
-      }
-      .hero-image img {
-        display: block;
-        margin: 0 auto;
-        border-radius: 12px;
-        box-shadow: var(--box-shadow);
-      }
-      .prose {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 1em;
-        color: rgb(var(--gray-dark));
-      }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
-      }
-      .title h1 {
-        margin: 0 0 0.5em 0;
-      }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-    </style>
-  </head>
+<GeneralLayout title={title} description={description}>
+  <article>
+    <div
+      class="relative w-full h-[60vh] min-h-100 max-h-150 overflow-hidden border-b-[3px] border-black bg-black"
+    >
+      <Image
+        src={imageToDisplay}
+        alt={title}
+        class="w-full h-full object-cover block opacity-60 md:opacity-80"
+        transition:name={`portfolio-hero-${slug}`}
+      />
 
-  <body>
-    <Header />
-    <main>
-      <article>
-        <div class="hero-image">
+      <div
+        class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"
+      >
+      </div>
+
+      <div
+        class="general-padding absolute inset-0 flex flex-col justify-end pb-12"
+      >
+        <FormatedStatus status={status} />
+        <h1
+          class="text-4xl md:text-7xl font-black leading-[0.95] max-w-225 tracking-[-0.03em] text-white"
+          transition:name={`portfolio-title-${slug}`}
+        >
+          {title}
+        </h1>
+        <div class="flex flex-wrap gap-6 mt-8 items-center">
           {
-            heroImage && (
-              <Image width={1020} height={510} src={heroImage} alt="" />
+            live && (
+              <a
+                href={demo}
+                class="group flex gap-2 items-center text-white hover:bg-white/40 border rounded-full px-4 py-2 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver demo en vivo
+                <ExternalLink
+                  class=" group-hover:rotate-10 transition-transform duration-300"
+                  size={18}
+                />
+              </a>
+            )
+          }
+
+          <a
+            href={repo}
+            class="group flex gap-2 items-center text-white hover:bg-white/40 border rounded-full px-4 py-2 transition-colors duration-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver repositorio
+            <Home
+              class="group-hover:-translate-y-1 transition-transform duration-300"
+              size={18}
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="general-padding py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-16">
+      <div class="prose prose-invert prose-flat max-w-none">
+        <slot />
+      </div>
+
+      <aside class="space-y-10">
+        <div class="flex justify-between lg:flex-col lg:gap-8">
+          <div>
+            <h3
+              class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 flex items-center gap-2"
+            >
+              <span class="w-4 h-px bg-gray-700"></span> Publicado
+            </h3>
+            <p class="text-sm font-medium"><FormattedDate date={pubDate} /></p>
+          </div>
+          {
+            updDate && (
+              <div class="text-right lg:text-left">
+                <h3 class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 flex items-center gap-2">
+                  <span class="w-4 h-px bg-gray-700" /> Actualizado
+                </h3>
+                <p class="text-sm font-medium">
+                  <FormattedDate date={updDate} />
+                </p>
+              </div>
             )
           }
         </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
+
+        <div>
+          <div>
+            <h3
+              class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500 mb-4 flex items-center gap-2"
+            >
+              <span class="w-4 h-px bg-gray-700"></span> Tecnologías
+            </h3>
+            <div class="flex flex-wrap gap-2">
               {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
+                technologies?.map((tech) => (
+                  <span class="text-xs text-gray-400 cursor-default border px-2 py-1 rounded-full">
+                    {tech}
+                  </span>
+                ))
               }
             </div>
-            <h1>{title}</h1>
-            <hr />
           </div>
-          <slot />
         </div>
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+      </aside>
+    </div>
+    <div
+      class="mt-8 pt-8 border-t border-gray-800 flex justify-between items-center"
+    >
+      <a
+        href="/portfolio"
+        class="text-sm text-gray-500 hover:text-black transition-colors flex items-center gap-2 group"
+      >
+        <ArrowLeft
+          size={16}
+          class="group-hover:-translate-x-1 transition-transform"
+        />
+        Volver al portfolio
+      </a>
+    </div>
+  </div>
+</GeneralLayout>
