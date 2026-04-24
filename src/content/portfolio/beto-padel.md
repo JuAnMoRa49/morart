@@ -1,14 +1,14 @@
 ---
-title: "Escuela de Danza Nijinsky"
-description: "Sitio web para otencion de mas clientes"
+title: "Beto Montoya"
+description: "Sitio web, con el objetivo ade compartir su experiencia"
 live: true
 technologies: ["astro", "tailwindcss", "cloudflare"]
-demo: "https://www.nijinskyqro.com"
-repo: "https://github.com/JuAnMoRa49/nijinsky-page"
+demo: "https://betomontoya.net/"
+repo: "https://github.com/JuAnMoRa49/beto-montoya"
 status: "in-progress"
-pubDate: "April 01 2026"
+pubDate: "April 07 2026"
 updDate: "April 20 2026"
-heroImage: "../../assets/portfolio/nijinsky-escuela.webp"
+heroImage: "../../assets/portfolio/beto-montoya.webp"
 ---
 
 Sitio web enfocado en la captacion de nuevas alumnas, para inscripcion, enfoque en la estetica, respetando los lineamientos de la marca y sus principios.
