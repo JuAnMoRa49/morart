@@ -2,10 +2,15 @@
 import GeneralLayout from "../layouts/GeneralLayout.astro";
 import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
+import BlogCard from "../components/BlogCard.astro";
 
-const projects = (await getCollection("portfolio")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const projects = (await getCollection("portfolio"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <GeneralLayout>
@@ -22,18 +27,29 @@ const projects = (await getCollection("portfolio")).sort(
     </section>
   </section>
 
-  <section id="me" class="bg-black text-white text-right relative">
-    <div class="general-padding py-16">
+  <section id="me" class="bg-black text-white text-right relative py-16">
+    <div class="general-padding pb-8">
       <h2 class="text-6xl font-serif text-right mb-8">Sobre mí</h2>
       <p class="text-lg">+5 años de experiencia. Ingeniero de Software</p>
       <p class="text-lg">
         Especializado en el desarrollo de aplicaciones web únicas.
       </p>
     </div>
+    <div class="general-padding pt-2">
+      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md-gap-8">
+        {
+          posts.map((post) => (
+            <li>
+              <BlogCard post={post} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 
-  <section id="projects" class="bg-white text-black relative">
-    <div class="general-padding py-16">
+  <section id="projects" class="bg-white text-black relative py-16">
+    <div class="general-padding pb-8">
       <h2 class="text-6xl text-red font-serif md:w-1/2 text-left mb-8">
         Proyectos
       </h2>
