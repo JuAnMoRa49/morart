@@ -5,7 +5,8 @@ import defaultHero from "../assets/portfolio/default-hero.webp";
 import FormatedStatus from "./FormatedStatus.astro";
 
 const { project } = Astro.props;
-const { title, description, status, pubDate, heroImage } = project.data;
+const { title, description, status, pubDate, heroImage, loading } =
+  project.data;
 
 const slug = project.id;
 
@@ -20,6 +21,7 @@ const imageToDisplay = heroImage || defaultHero;
     <Image
       src={imageToDisplay}
       alt={title}
+      loading={loading || "eager"}
       width={720}
       height={400}
       transition:name={`portfolio-hero-${slug}`}

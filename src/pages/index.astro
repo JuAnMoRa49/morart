@@ -37,7 +37,7 @@ const posts = (await getCollection("blog"))
         {
           projects.map((project) => (
             <li>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} loading="eager" />
             </li>
           ))
         }
@@ -58,7 +58,7 @@ const posts = (await getCollection("blog"))
         {
           posts.map((post) => (
             <li>
-              <BlogCard post={post} />
+              <BlogCard post={post} loading="lazy" />
             </li>
           ))
         }

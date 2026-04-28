@@ -3,23 +3,8 @@ import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
 import defaultHero from "../assets/blog/default-hero.webp";
 
-interface Props {
-  post: {
-    id: string;
-    data: {
-      title: string;
-      description: string;
-      author: string;
-      pubDate: Date;
-      updatedDate?: Date;
-      heroImage?: ImageMetadata;
-      inspo?: string;
-    };
-  };
-}
-
 const { post } = Astro.props;
-const { title, description, pubDate, heroImage, author } = post.data;
+const { title, description, pubDate, heroImage, author, loading } = post.data;
 
 const slug = post.id;
 
@@ -34,6 +19,7 @@ const imageToDisplay = heroImage || defaultHero;
     <Image
       src={imageToDisplay}
       alt={title}
+      loading={loading || "eager"}
       width={720}
       height={400}
       transition:name={`blog-hero-${slug}`}

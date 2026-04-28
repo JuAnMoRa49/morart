@@ -2,17 +2,23 @@
 import { SITE_TITLE } from "../consts";
 import NavLink from "./NavLink.astro";
 import { NAV_LINKS } from "../consts";
+import { Image } from "astro:assets";
 ---
 
 <header class="fixed left-0 right-0 top-0 z-50 bg-black text-white">
   <nav class="h-12 flex items-center justify-between general-padding">
-    <h2>
-      <a href="/" class="hover:opacity-80 transition-opacity"
-        ><img src="/favicon.svg" class="size-12" /></a
-      >
-    </h2>
+    <a href="/" class="hover:opacity-80 transition-opacity">
+      <Image
+        src="/favicon.svg"
+        width={36}
+        height={36}
+        alt={SITE_TITLE}
+        loading="eager"
+      />
+    </a>
 
-    <div class="flex gap-4">
+    <div class="flex
+        gap-4">
       {
         NAV_LINKS.map((link) => (
           <NavLink key={link.key} href={link.href}>
